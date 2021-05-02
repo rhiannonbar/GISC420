@@ -9,8 +9,11 @@ Locations trialed have been selected based on the importance of viewsheds in the
 
 #### Potential Locations to Trial: 
 Queenstown-Lakes, New Zealand
+
 Highlands, Scotland
 
 
 #### Resources:
 [arcpy code for a basic viewshed tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/viewshed.htm)
+
+[ArcGIS Pro Course in viewshed analysis](https://www.esri.com/training/catalog/57d8718d8b3e1ff2376bf91c/performing-viewshed-analysis-in-arcgis-pro/)
