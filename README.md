@@ -38,3 +38,5 @@ Locations trialed have been selected based on the importance of viewsheds in the
 [ArcGIS Pro Course in viewshed analysis](https://www.esri.com/training/catalog/57d8718d8b3e1ff2376bf91c/performing-viewshed-analysis-in-arcgis-pro/)
 
 [Iterations in Model Builder](https://pro.arcgis.com/en/pro-app/latest/tool-reference/modelbuilder-toolbox/examples-of-using-iterators-in-modelbuilder.htm) & [Youtube Walkthrough](https://www.youtube.com/watch?v=DoIkV2y0pEc)
+
+[JupyterLab](https://www.youtube.com/watch?v=A5YyoCKxEOU&t=1s)
