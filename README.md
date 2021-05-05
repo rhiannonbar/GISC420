@@ -37,4 +37,4 @@ Highlands, Scotland
 
 [ArcGIS Pro Course in viewshed analysis](https://www.esri.com/training/catalog/57d8718d8b3e1ff2376bf91c/performing-viewshed-analysis-in-arcgis-pro/)
 
-[Iterations in Model Builder](https://pro.arcgis.com/en/pro-app/latest/tool-reference/modelbuilder-toolbox/examples-of-using-iterators-in-modelbuilder.htm)
+[Iterations in Model Builder](https://pro.arcgis.com/en/pro-app/latest/tool-reference/modelbuilder-toolbox/examples-of-using-iterators-in-modelbuilder.htm) & [Youtube Walkthrough](https://www.youtube.com/watch?v=DoIkV2y0pEc)
