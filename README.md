@@ -8,9 +8,9 @@
 Locations trialed have been selected based on the importance of viewsheds in the siting and location of development. 
 
 #### Potential Locations to Trial: 
-Queenstown-Lakes, New Zealand
-Wellington, New Zealand
-Highlands, Scotland
+- Queenstown-Lakes, New Zealand
+- Wellington, New Zealand
+- Highlands, Scotland
 
 #### Tasks
 1) Find appropriate DEM
