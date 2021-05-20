@@ -40,3 +40,13 @@ Locations trialed have been selected based on the importance of viewsheds in the
 [Iterations in Model Builder](https://pro.arcgis.com/en/pro-app/latest/tool-reference/modelbuilder-toolbox/examples-of-using-iterators-in-modelbuilder.htm) & [Youtube Walkthrough](https://www.youtube.com/watch?v=DoIkV2y0pEc)
 
 [JupyterLab](https://www.youtube.com/watch?v=A5YyoCKxEOU&t=1s)
+
+
+### What we have tried
+- First tried to create ArcGIS Pro ModelBuilder but ran into issues with only being able to do iteration once and not being able to choose how and when the iteration stopped in the workflow. We were able to use iteration for the points but were unable to combine the datasets within the workflow because the output raster kept on being overwritten
+- We exported the code from Arc into Spyder to examine it, it had multiple errors and was unable to run as a standalone script
+- We tried to bring that data into Jupyter Lab to work with and ran into the same issues
+- Then we tried to get arcpy working on the lab machines but unfortunately ran into errors because of the environment and were unable to access the g420 environment and install arcpy on it
+- We created a notebook with a breakdown of the process needed but still needed to resolve using a viewshed function
+- We found a GDAL solution to running the viewshed analysis (insert hyperlink) but were unable to download the neccessary software on the lab computers
+- We then tried to download and use a GRASS solution (insert hyperlink) but it just didn't work. 
