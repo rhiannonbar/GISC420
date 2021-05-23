@@ -1,5 +1,5 @@
 # GISC420
-#### Rhiannon and Katie's Final Project
+### Initial Project Plan
 
 #### Purpose: 
 1) To use ArcGIS Pro's Model Builder to create a workflow that helps select a site based on the viewshed from a linear feature (such as a road)
@@ -8,9 +8,7 @@
 Locations trialed have been selected based on the importance of viewsheds in the siting and location of development. 
 
 #### Potential Locations to Trial: 
-- Queenstown-Lakes, New Zealand
-- Wellington, New Zealand
-- Highlands, Scotland
+Wellington, New Zealand - we ended up choosing Wellington since there was a 1m DEM available and we both have experience with the area. 
 
 #### Tasks
 1) Find appropriate DEM
@@ -42,7 +40,24 @@ Locations trialed have been selected based on the importance of viewsheds in the
 [JupyterLab](https://www.youtube.com/watch?v=A5YyoCKxEOU&t=1s)
 
 
-### What we have tried
+## Methods
+Once we created a DEM for the Wellington City area and a .shp for a small roadlength to trial we started experimenting both within ArcGIS and using Python tools outside of ArcGIS. Some of our challenges and choices are discussed below:
+
+### ArcGIS Pro Model Builder
+
+### ArcGIS Pro Script in Spyder and Jupyter Notebooks/Lab
+
+### GDAL in Jupyter Lab
+
+### GRASS in Jupyter Lab
+
+### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
+
+
+
+
+
+
 - First tried to create ArcGIS Pro ModelBuilder but ran into issues with only being able to do iteration once and not being able to choose how and when the iteration stopped in the workflow. We were able to use iteration for the points but were unable to combine the datasets within the workflow because the output raster kept on being overwritten
 - We exported the code from Arc into Spyder to examine it, it had multiple errors and was unable to run as a standalone script
 - We tried to bring that data into Jupyter Lab to work with and ran into the same issues
