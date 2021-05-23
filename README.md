@@ -44,8 +44,14 @@ Wellington, New Zealand - we ended up choosing Wellington since there was a 1m D
 Once we created a DEM for the Wellington City area and a .shp for a small roadlength to trial we started experimenting both within ArcGIS and using Python tools outside of ArcGIS. Some of our challenges and choices are discussed below:
 
 ### ArcGIS Pro Model Builder
+We first used the Generate Points Along Lines tools and added Distance as an inputable parameter, along with the DEM file and the linear feature segement. We knew that we had to iterate through the points created in order to run viewshed for each of the points. We decided to use the Iterate Feature Selection tool which would go through and highlight each row(/point) within the dataset and run the viewshed. From there, we ran a visibility analysis on each point taking in the additional parameters of observer offset and surface offset to set how tall the observer and the future object would be from the DEM surface. This part of the iteration was successful and we were able to create a model that would create a viewshed raster for each point. 
+
+We ran into issues at the "Append" stage. We tried using both the Append and Raster Calculator functions to add each raster to a final output raster. Since the iteration in ArcGIS doesn't allow as much control, and you are only able to use a single instance of iteration, we found that we were unable to append or add together datasets without resetting the original raster. This meant that the raster overwrote itself to its original empty values at the beginning of each loop. Although this was challenging, we were still able to create a tool that created a useful output, it just still requires a manual raster calculation as a last step.
+
 
 ### ArcGIS Pro Script in Spyder and Jupyter Notebooks/Lab
+
+We exported the raw code and first brought it into Spyder and then into Jupyter notebooks to experiment with. In both instances the raw code would not run and we struggled to make arcpy work within the G420 environment, potentially due to licensing issues within the G420 environment. There were also lines of the code that were designed not to work once exported that we experimented with hashing out or removing. This all began a wider exploration into the challanges of using environments and packages within the confides of university computers which are partially locked down and do not allow for the download of most programs. 
 
 ### GDAL in Jupyter Lab
 
