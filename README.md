@@ -66,7 +66,7 @@ make sure to mention extracting the code to run GDAL Viewshed from QGIS Model De
 
 
 
-
+### Steps (To delete later)
 - First tried to create ArcGIS Pro ModelBuilder but ran into issues with only being able to do iteration once and not being able to choose how and when the iteration stopped in the workflow. We were able to use iteration for the points but were unable to combine the datasets within the workflow because the output raster kept on being overwritten
 - We exported the code from Arc into Spyder to examine it, it had multiple errors and was unable to run as a standalone script
 - We tried to bring that data into Jupyter Lab to work with and ran into the same issues
