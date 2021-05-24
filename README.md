@@ -41,7 +41,7 @@ Wellington, New Zealand - we ended up choosing Wellington since there was a 1m D
 
 
 ## Methods & Discussion
-We initally downloaded the Wellington LiDAR 1m DEM from Land Information New Zealand. We created a mosaic DEM from the rasters provided. When experimenting with Viewshed using the DEM we found the analysis took a long time to run due to the extent of the DEM. For this reson we chose to clip the DEM and perform our analysis in a smaller area.  
+We initially  downloaded the Wellington LiDAR 1m DEM from Land Information New Zealand. We created a mosaic DEM from the rasters provided. When experimenting with Viewshed using the DEM we found the analysis took a long time to run due to the extent of the DEM. For this reason we chose to clip the DEM and perform our analysis in a smaller area. We chose an area close to the centre of Wellington which we are both familiar with. This should help us when interpreting the accuracy of the viewshed analysis we generate.    
 
 Once we created a [DEM for the Wellington City area and a .shp for a small roadlength](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/Final%20Project%20Initial%20Data.zip) to trial we started experimenting both within ArcGIS and using Python tools outside of ArcGIS. Some of our challenges and choices are discussed below:
 
