@@ -55,7 +55,10 @@ We exported the raw code and first brought it into Spyder and then into Jupyter 
 
 ### GDAL in Jupyter Lab
 
+make sure to mention extracting the code to run GDAL Viewshed from QGIS Model Designer 
+
 ### GRASS in Jupyter Lab
+
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
