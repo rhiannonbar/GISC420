@@ -51,7 +51,7 @@ We ran into issues at the "Append" stage. We tried using both the Append and Ras
 
 ### ArcGIS Pro Script in Spyder and Jupyter Notebooks/Lab
 
-We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/ArcGIS_Raw_Python.ipynb) and first brought it into Spyder and then into Jupyter notebooks to experiment with. In both instances the raw code would not run and we struggled to make arcpy work within the G420 environment, potentially due to licensing issues within the G420 environment. There were also lines of the code that were designed not to work once exported that we experimented with hashing out or removing. This all began a wider exploration into the challanges of using environments and packages within the confides of university computers which are partially locked down and do not allow for the download of most programs. 
+We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/ArcGIS_Raw_Python.ipynb) and first brought it into Spyder and then into Jupyter notebooks to experiment with. In both instances the raw code would not run and we struggled to make arcpy work within the G420 environment, potentially due to licensing issues within the G420 environment. There were also lines of the code that were designed not to work once exported that we experimented with hashing out or removing. This all began a wider exploration into the challenges of using environments and packages within the confides of university computers which are partially locked down and do not allow for the download of most programs. 
 
 ### GDAL in Jupyter Lab
 
