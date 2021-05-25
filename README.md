@@ -56,12 +56,13 @@ We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5
 
 ### GDAL in Jupyter Lab
 
-Having stuggled to use arcpy within the g420 environment, we researched other packages available in python that would let us perform viewshed analysis on a test point. We came across [github documentation](https://github.com/jonnyhuck/Viewshed) for viewshed analysis using the gdal package. Whilst the package itself was compatible with the g420 environment, we stuggled to access [OsGeo4W] (https://trac.osgeo.org/osgeo4w) needed to run the viewshed analysis via the lab computers. 
+Having stuggled to use arcpy within the g420 environment, we researched other library available in python that would let us perform viewshed analysis on a test point. We came across [github documentation](https://github.com/jonnyhuck/Viewshed) for viewshed analysis using the gdal package. Whilst the package itself was compatible with the g420 environment, we stuggled to access [OsGeo4W](https://trac.osgeo.org/osgeo4w) needed to run the viewshed analysis via the lab computers. 
 
 make sure to mention extracting the code to run GDAL Viewshed from QGIS Model Designer (Katie: unsure here) 
 
 ### GRASS in Jupyter Lab
 
+UNSURE 
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
