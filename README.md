@@ -41,14 +41,16 @@ Wellington, New Zealand - we ended up choosing Wellington since there was a 1m D
 
 
 ## Methods & Discussion
-We initially  downloaded the Wellington LiDAR 1m DEM from Land Information New Zealand. We created a mosaic DEM from the rasters provided. When experimenting with Viewshed using the DEM we found the analysis took a long time to run due to the extent of the DEM. For this reason we chose to clip the DEM and perform our analysis in a smaller area. We chose an area close to the centre of Wellington which we are both familiar with. This should help us when interpreting the accuracy of the viewshed analysis we generate.    
+We initially downloaded the Wellington LiDAR 1m DEM from Land Information New Zealand. We created a mosaic DEM from the rasters provided. When experimenting with Viewshed using the DEM we found the analysis took a long time to run due to the extent of the DEM. For this reason, we chose to clip the DEM and perform our analysis in a smaller area. We chose an area close to the centre of Wellington which we are both familiar with. This should help us when interpreting the accuracy of the viewshed analysis we generate.    
 
 Once we created a [DEM for the Wellington City area and a .shp for a small roadlength](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/Final%20Project%20Initial%20Data.zip) to trial we started experimenting both within ArcGIS and using Python tools outside of ArcGIS. Some of our challenges and choices are discussed below:
 
 ### ArcGIS Pro Model Builder
 We first used the Generate Points Along Lines tools and added Distance as an inputable parameter, along with the DEM file and the linear feature segment. Using distance as an model parameter means the number of points (and the number of viewshed's generated) will change based on the length of the linear feature that is fed into the model. We set a minimum of 5m for the distance as viewshed analysis can be computationally challenging and take a long time. We chose not to apply a maximum distance between points to try and make the tool more versatile. For example, we would want to have a much greater distance when placing points along a highway compared with a smaller road in a housing development. We knew that we had to iterate through the points created in order to run viewshed for each of the points. We decided to use the Iterate Feature Selection tool which would go through and highlight each row(/point) within the dataset and run the viewshed. From there, we ran a visibility analysis on each point taking in the additional parameters of observer offset and surface offset to set how tall the observer and the future object would be from the DEM surface. This part of the iteration was successful and we were able to create [a model that would create a viewshed raster for each point.](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/ArcGISModelGraphic.svg)
 
-We ran into issues at the "Append" stage. We tried using both the Append and Raster Calculator functions to add each raster to a final output raster. Since the iteration in ArcGIS doesn't allow as much control, and you are only able to use a single instance of iteration, we found that we were unable to append or add together datasets without resetting the original raster. This meant that the raster overwrote itself to its original empty values at the beginning of each loop. Although this was challenging, we were still able to create a tool that created [a useful output](https://github.com/rhiannonbar/GISC420/blob/main/OutputExample.pdf), it just still requires a manual raster calculation as a last step.
+We ran into issues at the "Append" stage. We tried using both the Append and Raster Calculator functions to add each raster to a final output raster. Since the iteration in ArcGIS doesn't allow as much control, and you are only able to use a single instance of iteration, we found that we were unable to append or add together datasets without resetting the original raster. This meant that the raster overwrote itself to its original empty values at the beginning of each loop. Although this was challenging, we were still able to create a tool that created [a useful output](https://github.com/rhiannonbar/GISC420/blob/main/OutputExample.pdf), it just still requires a manual raster calculation as a last step. We also experimented by grouping the components within the model to see if we could perform multiple individual steps within one model but didn't have any success. This experience highlighted the limitations of attempting to perform more complex tasks using model builder.
+
+INCUDE FINAL OUTPUT 
 
 ### ArcGIS Pro Script in Spyder and Jupyter Notebooks/Lab
 
@@ -56,19 +58,21 @@ We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5
 
 ### GDAL in Jupyter Lab
 
-Having stuggled to use arcpy within the g420 environment, we researched other library available in python that would let us perform viewshed analysis on a test point. We came across [github documentation](https://github.com/jonnyhuck/Viewshed) for viewshed analysis using the gdal package. Whilst the package itself was compatible with the g420 environment, we stuggled to access [OsGeo4W](https://trac.osgeo.org/osgeo4w) needed to run the viewshed analysis via the lab computers. 
+Having struggled to use arcpy within the g420 environment, we researched other library available in python that would let us perform viewshed analysis on a test point. We came across [github documentation](https://github.com/jonnyhuck/Viewshed) for viewshed analysis using the gdal package. Whilst the package itself was compatible with the g420 environment, we struggled to access [OsGeo4W](https://trac.osgeo.org/osgeo4w) needed to run the viewshed analysis via the lab computers. 
 
 make sure to mention extracting the code to run GDAL Viewshed from QGIS Model Designer (Katie: unsure here) 
 
 ### GRASS in Jupyter Lab
 
-Looking for another solution, we tried to use the r.viewshed function from Grass GIS. Again we struggled to access this throught the G420 environment. 
+Looking for another solution, we tried to use the r.viewshed function from Grass GIS. Again we struggled to access this through the G420 environment. 
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
+As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature (INSERT OUTPUT AND CODE. (DOUBLE CHECK) We then tried to run a viewshed on a test point, again using the Arcpy code arcpy.ddd.Visibilityfrom model builder. We input our DEM and test point into the function and generated an output (INSERT OUTPUT AND CODE). 
 
-As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) first we used the linear featuer (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. 
+Now that we had code for generating our points and performing viewshed analysis, we wanted to build a loop that would execute the viewshed function for each point along the line. This highlights a major advantage of using code over model builder as this method would give us more control over the iteration process and we would not be limited to only iterating once.
 
+OUTLINE ISSUES WITH LOOP
 
 ### Steps (To delete later)
 - First tried to create ArcGIS Pro ModelBuilder but ran into issues with only being able to do iteration once and not being able to choose how and when the iteration stopped in the workflow. We were able to use iteration for the points but were unable to combine the datasets within the workflow because the output raster kept on being overwritten
