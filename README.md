@@ -62,12 +62,12 @@ make sure to mention extracting the code to run GDAL Viewshed from QGIS Model De
 
 ### GRASS in Jupyter Lab
 
-UNSURE 
+Looking for another solution, we tried to use the r.viewshed function from Grass GIS. Again we struggled to access this throught the G420 environment. 
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
 
-As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy.
+As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) first we used the linear featuer (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. 
 
 
 ### Steps (To delete later)
