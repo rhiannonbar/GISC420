@@ -64,11 +64,11 @@ make sure to mention extracting the code to run GDAL Viewshed from QGIS Model De
 
 ### GRASS in Jupyter Lab
 
-Looking for another solution, we tried to use the r.viewshed function from Grass GIS. Again we struggled to access this through the G420 environment. 
+Looking for another solution, we tried to use the r.viewshed function from [Grass GIS](https://grass.osgeo.org/grass78/manuals/r.viewshed.html). Again we struggled to access this through the G420 environment. 
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
-As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature (INSERT OUTPUT AND CODE. (DOUBLE CHECK) We then tried to run a viewshed on a test point, again using the Arcpy code arcpy.ddd.Visibilityfrom model builder. We input our DEM and test point into the function and generated an output (INSERT OUTPUT AND CODE). 
+As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature (INSERT OUTPUT AND CODE. We then tried to run a viewshed on a test point, again using the Arcpy code arcpy.ddd.Visibilityfrom model builder. We input our DEM and test point into the function and generated an output (INSERT OUTPUT AND CODE). 
 
 Now that we had code for generating our points and performing viewshed analysis, we wanted to build a loop that would execute the viewshed function for each point along the line. This highlights a major advantage of using code over model builder as this method would give us more control over the iteration process and we would not be limited to only iterating once.
 
@@ -85,4 +85,4 @@ OUTLINE ISSUES WITH LOOP
 
 ### limitations of methodology
 - One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
-- 
+- The main challenge we found was developing a method that would allow us tp automate the viewshed of each individual point 
