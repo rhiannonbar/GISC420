@@ -67,7 +67,7 @@ UNSURE
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
 
-
+As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy.
 
 
 ### Steps (To delete later)
