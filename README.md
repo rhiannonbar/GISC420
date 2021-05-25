@@ -79,6 +79,6 @@ We initally researched how
 - We found a GDAL solution to running the viewshed analysis (insert hyperlink) but were unable to download the neccessary software on the lab computers
 - We then tried to download and use a GRASS solution (insert hyperlink) but it just didn't work. 
 
-## limitations of methodology
+### limitations of methodology
 - One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
 - 
