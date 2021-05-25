@@ -83,7 +83,7 @@ OUTLINE ISSUES WITH LOOP
 - We found a GDAL solution to running the viewshed analysis (insert hyperlink) but were unable to download the neccessary software on the lab computers
 - We then tried to download and use a GRASS solution (insert hyperlink) but it just didn't work. 
 
-### limitations of methodology
+### limitations of methodology and future steps 
 - One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
 - The main challenge we found was developing a method that would allow us tp automate the viewshed of each individual point 
-- 
+- In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuative to understand than "visible at x no. of points" 
