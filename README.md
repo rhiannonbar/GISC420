@@ -70,9 +70,9 @@ Looking for another solution, we tried to use the r.viewshed function from [Gras
 
 Through experimentation, we realised that the Python tab of ArcPro settings allows the user to clone their ArcGIS environment and add additional modules such as geopandas and rasterio. The original ArcGIS environment is locked down and limited in its customisation, however this new environment was in a location that allowed access via Anaconda and Jupyter Notebook. This approach allowed us to use arcpy packages alongside other more python friendly packages such as geopandas. 
 
-As a result, we we able to put together a workflow using a Jupyter Notebok. We reviewed the raw code again from Moodel Builder and reused some of the arcpy functions with minor alterations. First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature. We then tried to run a viewshed on a test point, again using the Arcpy code. We input our DEM and test point into the function and generated an output. 
+As a result, we were able to put together a workflow using a Jupyter Notebook. We reviewed the raw code again from Model Builder and reused some of the arcpy functions with minor alterations. First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature. We then tried to run a viewshed on a test point, again using the Arcpy code. We input our DEM and test point into the function and generated an output. 
 
-Once of the major challanges with using arcpy is that the functions we used were extremely complex and we spent a considerable amount of time working through syntax errors. The outputs also didn't save to the environment so we were creating a significant number of files and ran into issues saving files in a consistent location. This issue is resolvable but requires more time than we had available to make file saving consistent and replicatable. 
+Once of the major challenges with using arcpy is that the functions we used were extremely complex and we spent a considerable amount of time working through syntax errors. The outputs also didn't save to the environment so we were creating a significant number of files and ran into issues saving files in a consistent location. This issue is resolvable but requires more time than we had available to make file saving consistent and replicatable . 
 
 Finally, we attempted to create a loop for generating points and performing viewshed analysis for all of the points along a line. After many attempts to work within arcpy we realised that iteration using only arcpy was not feasible for us at this time. We decided that a combination of geopandas and arcpy would be the most achievable method. This method is described below:
   1) Convert the points layer to a geopandas geodataframe
@@ -82,7 +82,8 @@ Finally, we attempted to create a loop for generating points and performing view
   5) Append the results
   6) Repeat iteration until points layer is complete
  
- Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis appropriately. 
+ Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis appropriately.
+
 
 ### Limitations of methodology and future steps 
 - One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
