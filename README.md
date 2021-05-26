@@ -60,7 +60,7 @@ We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5
 
 Having struggled to use arcpy within the g420 environment, we researched other library available in python that would let us perform viewshed analysis on a test point. We came across [github documentation](https://github.com/jonnyhuck/Viewshed) for viewshed analysis using the gdal package. Whilst the package itself was compatible with the g420 environment, we struggled to access [OsGeo4W](https://trac.osgeo.org/osgeo4w) needed to run the viewshed analysis via the lab computers. 
 
-make sure to mention extracting the code to run GDAL Viewshed from QGIS Model Designer (Katie: unsure here) 
+We also checked QGIS and used its Model Designer to examine the code used for its GDAL-based viewshed tool. Unfortunately, we were again unable to download the appropriate packages.
 
 ### GRASS in Jupyter Lab
 
@@ -68,22 +68,23 @@ Looking for another solution, we tried to use the r.viewshed function from [Gras
 
 ### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
 
-As a result of cloning the ArcGIS environment and uploading geopandas via ArcGIS Pro, we could now run code using a combination of geopandas and Arcpy. We could then run sections of the raw code in our environment with some small alterations to the code. (UNSURE DOUBLE CHECK) First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature (INSERT OUTPUT AND CODE. We then tried to run a viewshed on a test point, again using the Arcpy code arcpy.ddd.Visibilityfrom model builder. We input our DEM and test point into the function and generated an output (INSERT OUTPUT AND CODE). 
+Through experimentation, we realised that the Python tab of ArcPro settings allows the user to clone their ArcGIS environment and add additional modules such as geopandas and rasterio. The original ArcGIS environment is locked down and limited in its customisation, however this new environment was in a location that allowed access via Anaconda and Jupyter Notebook. This approach allowed us to use arcpy packages alongside other more python friendly packages such as geopandas. 
 
-Now that we had code for generating our points and performing viewshed analysis, we wanted to build a loop that would execute the viewshed function for each point along the line. This highlights a major advantage of using code over model builder as this method would give us more control over the iteration process and we would not be limited to only iterating once per model.
+As a result, we we able to put together a workflow using a Jupyter Notebok. We reviewed the raw code again from Moodel Builder and reused some of the arcpy functions with minor alterations. First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature. We then tried to run a viewshed on a test point, again using the Arcpy code. We input our DEM and test point into the function and generated an output. 
 
-OUTLINE ISSUES WITH LOOP
+Once of the major challanges with using arcpy is that the functions we used were extremely complex and we spent a considerable amount of time working through syntax errors. The outputs also didn't save to the environment so we were creating a significant number of files and ran into issues saving files in a consistent location. This issue is resolvable but requires more time than we had available to make file saving consistent and replicatable. 
 
-### Steps (To delete later)
-- First tried to create ArcGIS Pro ModelBuilder but ran into issues with only being able to do iteration once and not being able to choose how and when the iteration stopped in the workflow. We were able to use iteration for the points but were unable to combine the datasets within the workflow because the output raster kept on being overwritten
-- We exported the code from Arc into Spyder to examine it, it had multiple errors and was unable to run as a standalone script
-- We tried to bring that data into Jupyter Lab to work with and ran into the same issues
-- Then we tried to get arcpy working on the lab machines but unfortunately ran into errors because of the environment and were unable to access the g420 environment and install arcpy on it
-- We created a notebook with a breakdown of the process needed but still needed to resolve using a viewshed function
-- We found a GDAL solution to running the viewshed analysis (insert hyperlink) but were unable to download the neccessary software on the lab computers
-- We then tried to download and use a GRASS solution (insert hyperlink) but it just didn't work. 
+Finally, we attempted to create a loop for generating points and performing viewshed analysis for all of the points along a line. After many attempts to work within arcpy we realised that iteration using only arcpy was not feasible for us at this time. We decided that a combination of geopandas and arcpy would be the most achievable method. This method is described below:
+  1) Convert the points layer to a geopandas geodataframe
+  2) Iterate through each feature in the geodataframe
+  3) Convert the feature into a .shp file and save
+  4) Perform the viewshed analysis
+  5) Append the results
+  6) Repeat iteration until points layer is complete
+ 
+ Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis appropriately. 
 
-### limitations of methodology and future steps 
+### Limitations of methodology and future steps 
 - One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
 - In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuative to understand than "visible at x no. of points" 
