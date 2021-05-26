@@ -50,8 +50,6 @@ We first used the Generate Points Along Lines tools and added Distance as an inp
 
 We ran into issues at the "Append" stage. We tried using both the Append and Raster Calculator functions to add each raster to a final output raster. Since the iteration in ArcGIS doesn't allow as much control, and you are only able to use a single instance of iteration, we found that we were unable to append or add together datasets without resetting the original raster. This meant that the raster overwrote itself to its original empty values at the beginning of each loop. Although this was challenging, we were still able to create a tool that created [a useful output](https://github.com/rhiannonbar/GISC420/blob/main/OutputExample.pdf), it just still requires a manual raster calculation as a last step. We also experimented by grouping the components within the model to see if we could perform multiple individual steps within one model but didn't have any success. This experience highlighted the limitations of attempting to perform more complex tasks using model builder.
 
-INCUDE FINAL OUTPUT 
-
 ### ArcGIS Pro Script in Spyder and Jupyter Notebooks/Lab
 
 We exported the [raw code](https://github.com/rhiannonbar/GISC420/blob/fcf0f14e5222b6bf6185d1670432550e50b411bc/ArcGIS_Raw_Python.ipynb) and first brought it into Spyder and then into Jupyter notebooks to experiment with. In both instances the raw code would not run and we struggled to make arcpy work within the G420 environment, potentially due to licensing issues within the G420 environment. There were also lines of the code that were designed not to work once exported that we experimented with hashing out or removing. This all began a wider exploration into the challenges of using environments and packages within the confides of university computers which are partially locked down and do not allow for the download of most programs. 
@@ -66,11 +64,11 @@ We also checked QGIS and used its Model Designer to examine the code used for it
 
 Looking for another solution, we tried to use the r.viewshed function from [Grass GIS](https://grass.osgeo.org/grass78/manuals/r.viewshed.html). Again we struggled to access this through the G420 environment. 
 
-### Cloning the ArcGIS environment, adding geopandas and working in Jupyter Lab
+### Cloning the ArcGIS Environment, Adding Geopandas and Working in Jupyter Lab
 
 Through experimentation, we realised that the Python tab of ArcPro settings allows the user to clone their ArcGIS environment and add additional modules such as geopandas and rasterio. The original ArcGIS environment is locked down and limited in its customisation, however this new environment was in a location that allowed access via Anaconda and Jupyter Notebook. This approach allowed us to use arcpy packages alongside other more python friendly packages such as geopandas. 
 
-As a result, we were able to put together a workflow using a Jupyter Notebook. We reviewed the raw code again from Model Builder and reused some of the arcpy functions with minor alterations. First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature. We then tried to run a viewshed on a test point, again using the Arcpy code. We input our DEM and test point into the function and generated an output. 
+As a result, we were able to put together a workflow using a Jupyter Notebook. We reviewed the raw code again from Model Builder and reused some of the arcpy functions with minor alterations. First we used the linear feature (roadseg) we had generated in Arcmap to test the GeneratePointsAlongALine function in arcpy. The code ran well and generated points along the linear feature. We then tried to run a viewshed on a test point, again using the Arcpy code. We input our DEM and test point into the function and [generated an output](https://github.com/rhiannonbar/GISC420/blob/main/GEOG420%20Final%20Project.ipynb). 
 
 Once of the major challenges with using arcpy is that the functions we used were extremely complex and we spent a considerable amount of time working through syntax errors. The outputs also didn't save to the environment so we were creating a significant number of files and ran into issues saving files in a consistent location. This issue is resolvable but requires more time than we had available to make file saving consistent and replicatable . 
 
@@ -82,7 +80,7 @@ Finally, we attempted to create a loop for generating points and performing view
   5) Append the results
   6) Repeat iteration until points layer is complete
  
- Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis appropriately.
+ Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis.
 
 
 ### Limitations of methodology and future steps 
