@@ -83,7 +83,7 @@ Finally, we attempted to create a loop for generating points and performing view
  Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis.
 
 
-### Limitations of methodology and future steps 
-- One limitation of our viewshed analysis was reformed on a DTM rather than a DSM. A DSM includes features above the Earth's surface such as urban infrastructure. In a built-up region like Wellington these features are likely to be highly influential in what is and isn't visible within a landscape.  
+## Limitations of Methodology and Future Steps 
+- We only tested our data using a LiDAR based DSM and we also only used one line segment. The 
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
 - In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuative to understand than "visible at x no. of points" 
