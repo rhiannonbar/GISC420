@@ -84,7 +84,7 @@ Finally, we attempted to create a loop for generating points and performing view
 
 
 ## Limitations of Methodology 
-- We only tested our data using a LiDAR based DSM and we also only used one line segment. The (?)
+- We only tested our data using a LiDAR based DSM and we also only used one line segment. We could perform the same method on different regions, such as areas with less elevation change, and see how this effected our output. We also didn't the same method on longer line segments. As viewshed analysis is computationally challenging, there will be a limit on how many viewsheds should be performed per model in model builder. We could have used different line segments to explore this further    
 -  We performed our viewshed analysis using a DEM rather than a DSM. A DSM includes above ground features such as buildings and vegetation. In an urban environment such as Wellington, above ground features are likely to exert a strong control on what is visible in a landscape. However, a DSM for the Wellington region would be more challenging to obtain. Viewshed analysis also doesn’t consider how visibility in the landscape may change over time due to factors such as seasonal changes in vegetation. 
 
 
@@ -95,3 +95,4 @@ Finally, we attempted to create a loop for generating points and performing view
 ## Future development 
 -	The availability of viewshed functions in GDAL would enable use to reproduce our methodology without relying on acrpy code. Using open source software (?) outside of the ESRI environment may enable us to have more flexibility in utilising different environments. We would need to try this on computers outside of the lab with less restrictions on creating and altering environments. 
 - In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuitive to understand than "visible at x no. of points" 
+- As previously discussed, viewshed analysis is computationally challenging, especially in Arc and can take a long time. It may be interesting to explore if the same issues are present when working in python. Is there a way to store each viewshed as an object within the function rather than writing it out to a file and then adding them together?
