@@ -84,7 +84,8 @@ Finally, we attempted to create a loop for generating points and performing view
 
 
 ## Limitations of Methodology 
-- We only tested our data using a LiDAR based DSM and we also only used one line segment. The 
+- We only tested our data using a LiDAR based DSM and we also only used one line segment. The (?)
+-  We performed our viewshed analysis using a DEM rather than a DSM. A DSM includes above ground featuers such as buildings and vegetation. In an urban environment such as Wellington, above ground features are likely to exert a strong control on what is visible in a landscape.
 
 ## Challenges 
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
@@ -92,4 +93,4 @@ Finally, we attempted to create a loop for generating points and performing view
 
 ## Future development 
 -	The availability of viewshed functions in GDAL would enable use to reproduce our methodology without relying on acrpy code. Using open source software (?) outside of the ESRI environment may enable us to have more flexibility in utilising different environments. We would need to try this on computers outside of the lab with less restrictions on creating environments. 
-- In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuative to understand than "visible at x no. of points" 
+- In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuitive to understand than "visible at x no. of points" 
