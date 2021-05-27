@@ -86,7 +86,7 @@ Finally, we attempted to create a loop for generating points and performing view
 ## Limitations of Methodology 
 - We only tested our data using a LiDAR based DSM and we also only used one line segment. The 
 
-# Challenges 
+## Challenges 
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
 
 ## Future development 
