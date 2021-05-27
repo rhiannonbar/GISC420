@@ -88,6 +88,7 @@ Finally, we attempted to create a loop for generating points and performing view
 
 ## Challenges 
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
+- another challenge we ran into was developing a method that would allow us to automate the viewshed of each individual point. In addition, we struggled to create environments to give us access to the libraries we needed. This was likely due to restrictions in accessing arcpy outside of the ESRI environment and restrictions in altering environments on the lab computers. 
 
 ## Future development 
 -	The availability of viewshed functions in GDAL would enable use to reproduce our methodology without relying on acrpy code. Using open source software (?) outside of the ESRI environment may enable us to have more flexibility in utilising different environments. We would need to try this on computers outside of the lab with less restrictions on creating environments. 
