@@ -83,7 +83,12 @@ Finally, we attempted to create a loop for generating points and performing view
  Unfortunately, we were not able to complete the loop portion of this code within the time constraints of this class. Despite the challenges of changing data formats and arcpy "wrangling", we believe that this method could be more appropriate to create a function that performs this analysis.
 
 
-## Limitations of Methodology and Future Steps 
+## Limitations of Methodology 
 - We only tested our data using a LiDAR based DSM and we also only used one line segment. The 
+
+# Challenges 
 - The main challenge we found was developing a method that would allow us to automate the viewshed of each individual point 
+
+## Future development 
+-	The availability of viewshed functions in GDAL would enable use to reproduce our methodology without relying on acrpy code. Using open source software (?) outside of the ESRI environment may enable us to have more flexibility in utilising different environments. We would need to try this on computers outside of the lab with less restrictions on creating environments. 
 - In future we could also think about how to improve the classification of our output. We could reclassify the output into high, medium and low visibility as this may be more intuative to understand than "visible at x no. of points" 
